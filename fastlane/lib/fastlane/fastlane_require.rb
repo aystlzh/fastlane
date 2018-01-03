@@ -53,8 +53,7 @@ module Fastlane
           end
           _pid, status = Process.wait2
           return true if status.exitstatus == 0
-        else
-          # OS doesn't support `fork` (e.g. Windows)
+          # else OS doesn't support `fork` (e.g. Windows)
         end
 
         Gem::Specification.any? { |s| s.name == name and req =~ s.version }
