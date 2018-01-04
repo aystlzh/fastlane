@@ -4,7 +4,7 @@ describe Fastlane do
       before do
         # Create base test directory
         @tmp_path = Dir.mktmpdir
-        FileUtils.mkdir_p("#{@tmp_path}/source/")
+        FileUtils.mkdir_p("#{@tmp_path}/source")
       end
 
       it "Copies a file to target path" do
