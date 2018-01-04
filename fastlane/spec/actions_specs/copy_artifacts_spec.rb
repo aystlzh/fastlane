@@ -42,7 +42,7 @@ describe Fastlane do
       it "Copies a file with verbose" do
         source_path = "#{@tmp_path}/source"
         FileUtils.touch(source_path)
-        target_path = "#{@tmp_path}/target"
+        target_path = "#{@tmp_path}/target738"
 
         expect(UI).to receive(:verbose).once.ordered.with("Copying artifacts #{source_path} to #{target_path}")
         expect(UI).to receive(:verbose).once.ordered.with('Keeping original files')
@@ -60,7 +60,7 @@ describe Fastlane do
       it "Copies a file without keeping original and verbose" do
         source_path = "#{@tmp_path}/source"
         FileUtils.touch(source_path)
-        target_path = "#{@tmp_path}/target"
+        target_path = "#{@tmp_path}/target987"
 
         expect(UI).to receive(:verbose).once.ordered.with("Copying artifacts #{source_path} to #{target_path}")
         expect(UI).to receive(:verbose).once.ordered.with('Not keeping original files')
@@ -77,7 +77,7 @@ describe Fastlane do
 
       it "Copies a file with file missing does not fail (no flag set)" do
         source_path = "#{@tmp_path}/source/missing"
-        target_path = "#{@tmp_path}/target"
+        target_path = "#{@tmp_path}/target123"
 
         Fastlane::FastFile.new.parse("lane :test do
           copy_artifacts(artifacts: '#{source_path}', target_path: '#{target_path}')
@@ -88,7 +88,7 @@ describe Fastlane do
 
       it "Copies a file with file missing fails (flag set)" do
         source_path = "#{@tmp_path}/source/not_going_to_be_there"
-        target_path = "#{@tmp_path}/target"
+        target_path = "#{@tmp_path}/target456"
 
         expect do
           Fastlane::FastFile.new.parse("lane :test do
